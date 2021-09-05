@@ -29,6 +29,16 @@ export class JogoDaVelhaService {
     this.inicializarTabuleiro();
   }
 
+  inicializar(): void {
+    this._showInicio = true;
+    this._showTabuleiro = false;
+    this._showFinal = false;
+    this.numMovimentos = 0;
+    this._jogador = this.X;
+    this.vitoria = false;
+    this.inicializarTabuleiro();
+  }
+
   inicializarTabuleiro() {
     this.tabuleiro = [this.TAM_TAB];
     for (let i = 0; i < this.TAM_TAB; i++) {
@@ -177,7 +187,7 @@ export class JogoDaVelhaService {
   }
 
   novoJogo(): void {
-    this.inicializarTabuleiro();
+    this.inicializar();
     this._showFinal = false;
     this._showInicio = false;
     this._showTabuleiro = true;
