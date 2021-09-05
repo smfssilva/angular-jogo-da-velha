@@ -37,20 +37,24 @@ export class JogoDaVelhaComponent implements OnInit {
     this.jogoDaVelhaService.jogar(posX, posY);
   }
 
-  exibirX(posx: number, posY: number): boolean {
-    return this.jogoDaVelhaService.exibirX(posx, posY);
+  exibirX(posX: number, posY: number): boolean {
+    return this.jogoDaVelhaService.exibirX(posX, posY);
   }
 
   exibirO(posx: number, posY: number): boolean {
     return this.jogoDaVelhaService.exibirO(posx, posY);
   }
 
-  exibirVitoria(posx: number, posY: number): boolean {
-    return this.jogoDaVelhaService.exibirVitoria(posx, posY);
+  exibirVitoria(posX: number, posY: number): boolean {
+    return this.jogoDaVelhaService.exibirVitoria(posX, posY);
   }
 
+  get jogador(): number {
+    return this.jogoDaVelhaService.jogador;
+  }
 
-
-
+  novoJogo(): void {
+    this.jogoDaVelhaService.novoJogo();
+  }
 
 }
